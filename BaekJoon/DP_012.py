@@ -16,6 +16,33 @@
      dp[idx] = max ( dp[idx], dp[cmp_idx]+1 ) 
 
 
+  2. 바이토닉 부분 수열은 기준 숫자 S_t를 기준으로 , S_t-1 < S_t  and  S_t > S_t+1 이기 떄문에 
+
+    기준 숫자 numbers[idx]에 대해서 
+    
+    a)  numbers[0] ~ numbers[idx-1]  
+
+    b)  numbers[idx+1] ~ numbers[-1]
+
+    
+    a), b) 두개의 범위에 대해서 각각 dp 알고리즘을 적용해야 하며, 
+
+    b)의 경우 a)에서 사용되는 dp 알고리즘을 적용할 경우 배열을 '뒤집어'야 한다 (방향이 다르기 떄문에)
+
+
+  3. 결과 값 
+
+    max_value =  max  ( dp_increase[idx] + dp_decrease[::-1][idx] ) - 1  
+
+    dp_increase ( a case ) , dp_decrease( b case) 를 모두 구한 후, 
+
+    
+    increase 와 decresae의 idx를 맞춰주기 위하여 dp_decrease를 다시 뒤집는다.
+
+    
+    기준점은 제외 해야 함으로 결과값에서 -1을 해준다 
+
+
 
 
 
