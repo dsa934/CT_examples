@@ -1,5 +1,15 @@
 
 
+'''
+
+ Backjoon _ exampels 24446
+
+  "알고리즘 수업 3"   by Jinwoo Lee
+
+  < algorithm >
+ 
+
+'''
 from collections import deque
 
 
